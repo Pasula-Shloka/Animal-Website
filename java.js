@@ -127,8 +127,13 @@ function restartQuiz() {
   loadQuestion();
 }
 
-// initialize first question
+window.onload = function () {
+
+if(document.getElementById("question")){
 loadQuestion();
+}
+
+}
 
 
 
