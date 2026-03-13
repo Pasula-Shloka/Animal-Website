@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Animal Planet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+
+<h2>🐾 Animal Planet</h2>
+
+<div>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('gallery')">Gallery</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('quiz')">Quiz</a>
+<a onclick="toggleTheme()">🌙</a>
+</div>
+
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<h1>Discover the Animal Kingdom</h1>
+<p>Explore fascinating animals, learn amazing facts, and discover wildlife around the world.</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>🐯 Wild Animals</h3>
+<p>Lions, tigers, elephants and many powerful creatures of the wild.</p>
+</div>
+
+<div class="feature-card">
+<h3>🐶 Pet Animals</h3>
+<p>Dogs, cats, rabbits and birds that live with humans.</p>
+</div>
+
+<div class="feature-card">
+<h3>🌎 Conservation</h3>
+<p>Learn why protecting animals and wildlife is important.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="page">
+
+<h1>Animal Gallery</h1>
+
+<div class="search">
+<input type="text" placeholder="Search animal..." id="search" onkeyup="searchAnimal()">
+</div>
+
+<div class="filters">
+<button onclick="filterAnimal('all')">All</button>
+<button onclick="filterAnimal('wild')">Wild</button>
+<button onclick="filterAnimal('pet')">Pets</button>
+</div>
+
+<div class="gallery">
+
+<div class="card wild" onclick="showPopup('Lion','King of the jungle')">
+<img src="LION.png">
+<h3>Lion</h3>
+</div>
+
+<div class="card wild" onclick="showPopup('Tiger','Largest wild cat')">
+<img src="tiger.png">
+<h3>Tiger</h3>
+</div>
+
+<div class="card wild" onclick="showPopup('Elephant','Largest land animal')">
+<img src="elephant.png">
+<h3>Elephant</h3>
+</div>
+
+<div class="card pet" onclick="showPopup('Dog','Loyal companion')">
+<img src="dog.png">
+<h3>Dog</h3>
+</div>
+
+<div class="card pet" onclick="showPopup('Cat','Playful pet')">
+<img src="cat.png">
+<h3>Cat</h3>
+</div>
+
+<div class="card pet" onclick="showPopup('Rabbit','Cute fluffy animal')">
+<img src="rabbit.png">
+<h3>Rabbit</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<!-- ABOUT -->
+
+<section id="about" class="page">
+
+<div class="about-container">
+
+<h1 class="about-title">About the Animal Kingdom</h1>
+
+<p class="about-intro">
+The animal kingdom is one of the most diverse and fascinating parts of our planet.
+Animals exist in millions of species and inhabit environments ranging from dense
+rainforests and deep oceans to deserts and mountains. They play vital roles in
+maintaining the balance of ecosystems and the health of our planet.
+</p>
+
+
+<!-- ANIMAL FACT CARDS -->
+
+<div class="about-cards">
+
+<div class="about-card">
+<h3>🦁 Wild Animals</h3>
+<p>
+Wild animals live freely in natural environments such as forests,
+jungles, deserts, and oceans. They survive without human care
+and adapt to their surroundings through natural instincts.
+Examples include lions, tigers, elephants, and zebras.
+</p>
+</div>
+
+<div class="about-card">
+<h3>🐶 Pet Animals</h3>
+<p>
+Pet animals live with humans and provide companionship,
+love, and emotional support. Dogs, cats, rabbits, parrots,
+and fish are among the most common pets around the world.
+</p>
+</div>
+
+<div class="about-card">
+<h3>🌎 Ecosystem Balance</h3>
+<p>
+Animals play an important role in ecosystems by controlling
+populations, spreading seeds, pollinating plants, and
+maintaining food chains that keep nature balanced.
+</p>
+</div>
+
+</div>
+
+
+<!-- CONSERVATION -->
+
+<div class="conservation">
+
+<h2>🌱 Wildlife Conservation</h2>
+
+<p>
+Many species today are endangered due to habitat destruction,
+pollution, climate change, and illegal hunting. Conservation
+efforts are essential to protect biodiversity and maintain
+healthy ecosystems.
+</p>
+
+<ul>
+<li>Protect natural habitats</li>
+<li>Stop illegal wildlife trade</li>
+<li>Reduce pollution</li>
+<li>Support wildlife conservation programs</li>
+</ul>
+
+</div>
+
+
+<!-- FUN FACTS -->
+
+<div class="fun-facts">
+
+<h2>🐾 Fun Animal Facts</h2>
+
+<div class="fact-grid">
+
+<div class="fact">🐘 Elephants are the largest land animals.</div>
+<div class="fact">🐆 Cheetahs are the fastest land animals.</div>
+<div class="fact">🐬 Dolphins are highly intelligent mammals.</div>
+<div class="fact">🦜 Parrots can mimic human speech.</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUIZ PAGE -->
+
+<section id="quiz" class="page">
+
+<div class="quiz-container">
+
+<h1>🐾 Animal Quiz</h1>
+
+<div id="quiz-box">
+
+<h2 id="question"></h2>
+
+<div class="options">
+<button onclick="checkAnswer(0)" id="opt0"></button>
+<button onclick="checkAnswer(1)" id="opt1"></button>
+<button onclick="checkAnswer(2)" id="opt2"></button>
+<button onclick="checkAnswer(3)" id="opt3"></button>
+</div>
+
+<p id="result"></p>
+
+<button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2 id="animalTitle"></h2>
+<p id="animalText"></p>
+
+</div>
+
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>
